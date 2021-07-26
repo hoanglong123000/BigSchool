@@ -49,12 +49,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -167,10 +176,15 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DTOs\AttendanceDto.cs" />
+    <Compile Include="DTOs\FollowingDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,11 +200,33 @@
     <Compile Include="Migrations\202106290206390_Capnhatdulieu.Designer.cs">
       <DependentUpon>202106290206390_Capnhatdulieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107060129047_ThemCotNameVaoAspNetUser.cs" />
+    <Compile Include="Migrations\202107060129047_ThemCotNameVaoAspNetUser.Designer.cs">
+      <DependentUpon>202107060129047_ThemCotNameVaoAspNetUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107060400138_ThemBangAttendance.cs" />
+    <Compile Include="Migrations\202107060400138_ThemBangAttendance.Designer.cs">
+      <DependentUpon>202107060400138_ThemBangAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107060428240_ThemBangAttendance1.cs" />
+    <Compile Include="Migrations\202107060428240_ThemBangAttendance1.Designer.cs">
+      <DependentUpon>202107060428240_ThemBangAttendance1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107130407262_Chinhsuathuoctinh.cs" />
+    <Compile Include="Migrations\202107130407262_Chinhsuathuoctinh.Designer.cs">
+      <DependentUpon>202107130407262_Chinhsuathuoctinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107130430173_ThemTablemoi.cs" />
+    <Compile Include="Migrations\202107130430173_ThemTablemoi.Designer.cs">
+      <DependentUpon>202107130430173_ThemTablemoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Following.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -281,6 +317,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106290206390_Capnhatdulieu.resx">
       <DependentUpon>202106290206390_Capnhatdulieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107060129047_ThemCotNameVaoAspNetUser.resx">
+      <DependentUpon>202107060129047_ThemCotNameVaoAspNetUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107060400138_ThemBangAttendance.resx">
+      <DependentUpon>202107060400138_ThemBangAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107060428240_ThemBangAttendance1.resx">
+      <DependentUpon>202107060428240_ThemBangAttendance1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130407262_Chinhsuathuoctinh.resx">
+      <DependentUpon>202107130407262_Chinhsuathuoctinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130430173_ThemTablemoi.resx">
+      <DependentUpon>202107130430173_ThemTablemoi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

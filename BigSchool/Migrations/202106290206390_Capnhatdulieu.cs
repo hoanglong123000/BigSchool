@@ -7,9 +7,7 @@ namespace BigSchool.Migrations
     {
         public override void Up()
         {
-            Sql("INSERT INTO CATEGORIES (ID, NAME) VALUES (1, 'Nha Phat Trien')");
-            Sql("INSERT INTO CATEGORIES (ID, NAME) VALUES (2, 'Doanh Nghiep')");
-            Sql("INSERT INTO CATEGORIES (ID, NAME) VALUES (3, 'Marketing')");
+            Sql("INSERT INTO CATEGORIES (ID, NAME) VALUES (4, 'Doanh Nghiep Tu Nhan')");
         }
         
         public override void Down()

@@ -17,6 +17,8 @@ namespace BigSchool.Controllers
         {
             this._dbContext = new ApplicationDbContext();
         }
+
+
         // GET: Courses
         [Authorize]
         public ActionResult Create()
@@ -54,5 +56,7 @@ namespace BigSchool.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+
     }
 }

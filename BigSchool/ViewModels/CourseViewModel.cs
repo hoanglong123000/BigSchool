@@ -10,16 +10,17 @@ namespace BigSchool.ViewModels
     public class CourseViewModel
     {
         [Required]
-        [Display(Name = "Địa điểm")]
+        [Display(Name = "Địa điểm:")]
         public string Place { get; set; }
 
         [Required]
         [FutureDate]
-        [Display(Name = "Ngày tháng")]
+        [Display(Name = "Ngày tháng:")]
         public string Date { get; set; }
 
         [Required]
         [Display(Name = "Thời gian:")]
+        [ValidTime]
         public string Time { get; set; }
 
         
