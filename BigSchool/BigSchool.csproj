@@ -220,6 +220,10 @@
     <Compile Include="Migrations\202107130430173_ThemTablemoi.Designer.cs">
       <DependentUpon>202107130430173_ThemTablemoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107270117333_AddFollowingsTable.cs" />
+    <Compile Include="Migrations\202107270117333_AddFollowingsTable.Designer.cs">
+      <DependentUpon>202107270117333_AddFollowingsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Attendance.cs" />
@@ -332,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107130430173_ThemTablemoi.resx">
       <DependentUpon>202107130430173_ThemTablemoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107270117333_AddFollowingsTable.resx">
+      <DependentUpon>202107270117333_AddFollowingsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

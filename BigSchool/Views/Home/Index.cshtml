@@ -34,12 +34,13 @@
                 <div class="details">
                     <span class="lecturer"> 
                         @c.Lecturer.Name
-                        <button class="btn btn-default btn-sm js-toggle-follow" data-user-id ="@c.LecturerId">Theo dõi </button>
+                        <button class="btn btn-default btn-sm js-toggle-follow" data-user-id ="@c.LecturerId">Tham gia </button>
                     
                     </span>
                     <span class="category"> @c.Category.Name</span>
                     <button data-course-id ="@c.Id" class="btn btn-default btn-sm js-toggle-attendance">Theo dõi</button>
                 </div>
+            </div>
         </li>
     }
 </ul>
@@ -50,16 +51,16 @@
         $(document).ready(function () {
             $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
-                $.post("/api/attendances", { courseId = button.attr("data-course-id") })
+                $.post("/api/attendances", { courseId : button.attr("data-course-id") })
                     .done(function () {
                         button
                             .removeClass("btn-deault")
                             .addClass("btn-info")
-                            .text("Theo dõi");
+                            .text(" Đã tham gia");
                     });
 
-                .fail(function () {
-                        alert("Lỗi trang web")
+                    .fail(function () {
+                         alert("Lỗi trang web");
                     });
 
             });
@@ -68,12 +69,12 @@
 
 
                 var button = $(e.target);
-                $.post("/api/follwings", { followerId: button.attr("data-user-id") })
+                $.post("/api/followings", { followerId: button.attr("data-user-id") })
                     .done(function () {
                         button.text("Đang theo dõi")
                     })
                     .fail(function () {
-                        alert("Lỗi")
+                        alert("Lỗi");
                     });
                 });
 

@@ -21,10 +21,15 @@ namespace BigSchool.Controllers
         [HttpPost]
         public IHttpActionResult Attend ([FromBody] int id)
         {
+            var userId = User.Identity.GetUserId();
+
+            if (db.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == id))
+                return BadRequest("RRR");
+
             var attendance = new Attendance
             {
                 CourseId = id,
-                AttendeeId = User.Identity.GetUserId()
+                AttendeeId = userId 
             };
 
             db.Attendances.Add(attendance);
